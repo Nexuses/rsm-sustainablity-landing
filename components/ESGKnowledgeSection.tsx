@@ -33,8 +33,7 @@ export default function ESGKnowledgeSection() {
             Gain ESG Knowledge That Drives Individual and Business Impact
           </h2>
           <p className="text-white/80 max-w-4xl mx-auto text-sm sm:text-base md:text-lg px-4">
-            Whether you're an individual professional looking to build ESG expertise, or an organization aiming to drive sustainable transformation
-            — our training programs are designed to support your goals.
+            Whether you're an individual professional looking to build ESG expertise, or an organization aiming to drive sustainable business practices — our training programs are designed to support your goals.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
@@ -54,14 +53,14 @@ export default function ESGKnowledgeSection() {
                   className="object-contain w-4 h-4 sm:w-6 sm:h-6"
                 />
               </span>
-              <span className="font-semibold text-base sm:text-lg text-gray-900">Upcoming Session</span>
+              <span className="font-semibold text-lg sm:text-xl text-gray-900">Upcoming Session</span>
             </div>
             <div className="mb-3 sm:mb-4">
-              <div className="text-gray-700 font-medium mb-1 text-sm sm:text-base">May 15-18, 2025</div>
-              <div className="text-gray-500 text-xs sm:text-sm">Limited seats available. Register early to secure your spot.</div>
+              <div className="text-gray-700 font-medium mb-1 text-base sm:text-lg">August 15th-18th, 2025</div>
+              <div className="text-gray-500 text-sm sm:text-base">Limited seats available. Register early to secure your spot.</div>
             </div>
             <a
-              href="https://rsmacademy-sa.com/courses/36"
+              href="https://drive.google.com/file/d/1yuaep8c1Uzs0hp7bK4Y6Z_BkMwv6R4i4/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#27C26C] hover:bg-[#1fa85a] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"
@@ -96,20 +95,20 @@ export default function ESGKnowledgeSection() {
                   className="object-contain w-4 h-4 sm:w-6 sm:h-6"
                 />
               </span>
-              <span className="font-semibold text-base sm:text-lg text-gray-900">Request a Custom Program</span>
+              <span className="font-semibold text-lg sm:text-xl text-gray-900">Customized Training for Your Organisation</span>
             </div>
             <div className="mb-3 sm:mb-4">
-              <div className="text-gray-700 text-xs sm:text-sm mb-1">For customized training program for your organization, contact us at:</div>
-              <a href="mailto:training@rsm-sa.com" className="text-[#27C26C] font-medium text-sm sm:text-base">training@rsm-sa.com</a>
+              <div className="text-gray-700 text-sm sm:text-base mb-1">Need a training programme tailored to your team’s exact needs? 
+              Book a call for a training programme tailored precisely to your team’s needs.</div> 
             </div>
             <a
-              href="https://rsmacademy.vercel.app/"
+              href="mailto:ladhikari@rsmsaudi.com"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#009CDE] hover:bg-[#007bb3] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Contact us Today
+                Book a Call
                 <svg 
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
                   fill="none" 

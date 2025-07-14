@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="py-16 bg-gradient-to-r from-white to-green-50 overflow-hidden">
+    <section className="pt-32 pb-16 bg-gradient-to-r from-white to-green-50 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Left: Text Content (60%) */}
@@ -56,7 +56,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a 
-                href="https://rsmacademy-sa.com/courses/36"
+                href="https://drive.google.com/file/d/1yuaep8c1Uzs0hp7bK4Y6Z_BkMwv6R4i4/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-sky-600 hover:bg-sky-700 text-white px-8 py-3.5 rounded-lg min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
@@ -70,7 +70,7 @@ export default function HeroSection() {
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
               <a 
-                href="https://rsmacademy.vercel.app/"
+                href="https://rsmacademy-sa.com/courses/online"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-blue-950 hover:bg-blue-900 text-white px-8 py-3.5 rounded-lg sm:ml-8 min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
@@ -85,22 +85,20 @@ export default function HeroSection() {
               </a>
             </motion.div>
           </motion.div>
-          {/* Right: Video Only (40%) */}
+          {/* Right: Image (40%) */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full md:basis-3/5 flex justify-end items-center"
+            className="w-full md:basis-2/5 flex justify-end items-center h-full"
           >
-            <video
-              src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/RSM-Hero.webm"
-              autoPlay
-              loop
-              muted
-              playsInline
-              disablePictureInPicture
-              controlsList="nodownload nofullscreen"
-              className="object-cover w-full h-auto max-w-[140%]"
+            <Image
+              src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(15).png"
+              alt="Sustainability Toolkit"
+              width={600}
+              height={800}
+              className="object-contain w-full h-full max-h-[600px]"
+              priority
             />
           </motion.div>
         </div>

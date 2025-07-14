@@ -1,459 +1,405 @@
 "use client"
+import React, { useState, useEffect } from "react";
+import { Menu, X, Search, User, ChevronDown, ShoppingBag } from "lucide-react";
 
-import Link from "next/link"
-import { useState, useRef, useEffect } from "react"
-import { ChevronDown, ShoppingBag, User, Search, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-
-export default function Navbar() {
-  const [isAboutOpen, setIsAboutOpen] = useState(false)
-  const [isCartOpen, setIsCartOpen] = useState(false)
-  const [isEnterpriseOpen, setIsEnterpriseOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  const cartRef = useRef<HTMLDivElement>(null)
-  const enterpriseRef = useRef<HTMLDivElement>(null)
-  const mobileMenuRef = useRef<HTMLDivElement>(null)
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
+  const [isCorporateTrainingDropdownOpen, setIsCorporateTrainingDropdownOpen] = useState(false);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsAboutOpen(false)
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
-      if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
-        setIsCartOpen(false)
-      }
-      if (enterpriseRef.current && !enterpriseRef.current.contains(event.target as Node)) {
-        setIsEnterpriseOpen(false)
-      }
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false)
-      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Only for mobile
+  const toggleAboutDropdown = () => {
+    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+    if (!isAboutDropdownOpen) {
+      setIsCoursesDropdownOpen(false);
+      setIsCorporateTrainingDropdownOpen(false);
+    }
+  };
+
+  // Only for mobile
+  const toggleCoursesDropdown = () => {
+    setIsCoursesDropdownOpen(!isCoursesDropdownOpen);
+    if (!isCoursesDropdownOpen) {
+      setIsAboutDropdownOpen(false);
+      setIsCorporateTrainingDropdownOpen(false);
+    }
+  };
+
+  // Only for mobile
+  const toggleCorporateTrainingDropdown = () => {
+    setIsCorporateTrainingDropdownOpen(!isCorporateTrainingDropdownOpen);
+    if (!isCorporateTrainingDropdownOpen) {
+      setIsAboutDropdownOpen(false);
+      setIsCoursesDropdownOpen(false);
+    }
+  };
+
+  // Close mobile dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setIsAboutDropdownOpen(false);
+      setIsCoursesDropdownOpen(false);
+      setIsCorporateTrainingDropdownOpen(false);
+    };
+
+    if (isAboutDropdownOpen || isCoursesDropdownOpen || isCorporateTrainingDropdownOpen) {
+      document.addEventListener("click", handleClickOutside);
     }
 
-    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isAboutDropdownOpen, isCoursesDropdownOpen, isCorporateTrainingDropdownOpen]);
+
+
 
   return (
-    <motion.header 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 15 }}
-      className="border-b border-gray-200 bg-white"
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-white"
+      } py-4`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo area */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0 w-48 md:w-64"
-          >
-            <Link 
-              href="https://rsmacademy-sa.com/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center h-full"
-            >
-              <img
-                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/rsm%20logo.png"
-                alt="RSM Logo"
-                className="h-8 md:h-12 w-auto object-contain"
-              />
-            </Link>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {/* About Us with dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center text-gray-700 hover:text-gray-900"
-                onClick={() => setIsAboutOpen(!isAboutOpen)}
-              >
-                About Us
-                <motion.div
-                  animate={{ rotate: isAboutOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </motion.div>
-              </motion.button>
-              <AnimatePresence>
-                {isAboutOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-0 mt-2 w-56 rounded-lg bg-white py-2 shadow-xl ring-1 ring-black ring-opacity-5"
-                  >
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.1 }}
-                    >
-                      <Link 
-                        href="https://rsmacademy-sa.com/foreword" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Presentation
-                      </Link>
-                    </motion.div>
-                    <div className="border-t border-gray-100"></div>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.15 }}
-                    >
-                      <Link 
-                        href="https://rsmacademy-sa.com/vision" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Vision
-                      </Link>
-                    </motion.div>
-                    <div className="border-t border-gray-100"></div>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.2 }}
-                    >
-                      <Link 
-                        href="https://rsmacademy-sa.com/mission" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Message
-                      </Link>
-                    </motion.div>
-                    <div className="border-t border-gray-100"></div>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.25 }}
-                    >
-                      <Link 
-                        href="https://rsmacademy-sa.com/objectives" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Objectives
-                      </Link>
-                    </motion.div>
-                    <div className="border-t border-gray-100"></div>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.3 }}
-                    >
-                      <Link 
-                        href="https://rsmacademy-sa.com/core_values" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Our Values
-                      </Link>
-                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="flex justify-between items-center">
+          {/* Left side with logo and navigation */}
+          <div className="flex items-center gap-16">
+            {/* Logo */}
+            <div className="flex items-center">
+              <a href="https://rsmacademy-sa.com/" target="_blank">
+                <img
+                  src="https://res.cloudinary.com/rsmglobal/image/fetch/t_default/f_auto/q_auto/https://www.rsm.global/profiles/rsm_global_platform/themes/rsm_global_platform_2022/images/logo@2x.png"
+                  alt="RSM Logo"
+                  className="h-16"
+                />
+              </a>
             </div>
 
-            {/* Enterprise Training with dropdown */}
-            <div className="relative" ref={enterpriseRef}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center text-gray-700 hover:text-gray-900"
-                onClick={() => setIsEnterpriseOpen(!isEnterpriseOpen)}
-              >
-                Institutional Training
-                <motion.div
-                  animate={{ rotate: isEnterpriseOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-10">
+              <div className="relative group">
+                <button
+                  className="flex items-center text-darkGray hover:text-primary focus:outline-none peer text-lg font-medium"
                 >
+                  About Us
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </motion.div>
-              </motion.button>
-              <AnimatePresence>
-                {isEnterpriseOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-0 mt-2 w-56 rounded-lg bg-white py-2 shadow-xl ring-1 ring-black ring-opacity-5"
-                  >
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.1 }}
+                </button>
+                <div
+                  className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+                  style={{ transform: "translateY(20px)", top: "100%", paddingTop: '10px'}}
+                >
+                  <div className="py-6 px-6 space-y-6">
+                    <a
+                      href="https://rsmacademy-sa.com/foreword"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary border-b border-gray-200 pb-3"
                     >
-                      <Link 
-                        href="https://rsm-academy-landing.vercel.app/" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Corporate Training
-                      </Link>
-                    </motion.div>
-                    <div className="border-t border-gray-100"></div>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.15 }}
+                      Foreword
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/vision"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary border-b border-gray-200 pb-3"
                     >
-                      <Link 
-                        href="https://rsm-sustainability-landing.vercel.app/" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
-                      >
-                        Sustainability Toolkit Training
-                      </Link>
-                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Other nav items */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="https://rsmacademy-sa.com/courses" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-gray-900"
+                      Vision
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/mission"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary border-b border-gray-200 pb-3"
+                    >
+                      Mission
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/objectives"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary border-b border-gray-200 pb-3"
+                    >
+                      Objectives
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/core_values"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary"
+                    >
+                      Core Values
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group">
+                <button
+                  className="flex items-center text-darkGray hover:text-primary focus:outline-none peer text-lg font-medium"
+                >
+                  Courses
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                <div
+                  className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+                  style={{ transform: "translateY(20px)", top: "100%", paddingTop: '10px'}}
+                >
+                  <div className="py-6 px-6 space-y-6">
+                    <a
+                      href="https://rsmacademy-sa.com/courses/online"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary border-b border-gray-200 pb-3"
+                    >
+                      Live Courses
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/courses/recorded"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary"
+                    >
+                      Recorded Courses
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group">
+                <button
+                  className="flex items-center text-darkGray hover:text-primary focus:outline-none peer text-lg font-medium"
+                  onClick={() => window.open("https://rsmacademy-sa.com/corporate-training", "_blank")}
+                >
+                  Corporate Training
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                <div
+                  className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+                  style={{ transform: "translateY(20px)", top: "100%", paddingTop: '10px'}}
+                >
+                  <div className="py-6 px-6 space-y-6">
+                    <a
+                      href="https://gri-training.rsmacademy-sa.co"
+                      target="_blank"
+                      className="block text-lg font-medium text-darkGray hover:text-primary"
+                    >
+                      GRI™ Training
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://rsm-training-calendar.vercel.app/"
+                // target="_blank"
+                className="text-darkGray hover:text-primary text-lg font-medium"
               >
-                Courses
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="https://rsmacademy-sa.com/courses/recorded" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-gray-900"
-              >
-                Recorded Courses
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="https://rsmacademy-sa.com/courses/online" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-gray-900"
-              >
-                Live Courses
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
+                Training Calendar
+              </a>
+              <a
                 href="https://rsmacademy-sa.com/contact_us"
                 target="_blank"
-                rel="noopener noreferrer" 
-                className="text-gray-700 hover:text-gray-900"
+                className="text-darkGray hover:text-primary text-lg font-medium"
               >
                 Contact Us
-              </Link>
-            </motion.div>
-          </nav>
-
-          {/* Right side - Sign in, Cart and Search */}
-          <div className="flex items-center space-x-4">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:flex">
-              <Link 
-                href="https://rsmacademy-sa.com/login" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-gray-900"
-              >
-                <User className="mr-1 h-5 w-5" />
-                <span>Sign in</span>
-              </Link>
-            </motion.div>
-            
-            <div className="relative" ref={cartRef}>
-              <motion.div 
-                whileHover={{ scale: 1.1 }} 
-                whileTap={{ scale: 0.9 }}
-                onHoverStart={() => setIsCartOpen(true)}
-                className="cursor-pointer"
-              >
-                <div className="text-gray-700 hover:text-gray-900">
-                  <ShoppingBag className="h-5 w-5" />
-                </div>
-              </motion.div>
-
-              <AnimatePresence>
-                {isCartOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-72 rounded-lg bg-white py-4 px-6 shadow-xl ring-1 ring-black ring-opacity-5"
-                    onMouseLeave={() => setIsCartOpen(false)}
-                  >
-                    <div className="flex flex-col items-center justify-center space-y-3">
-                      <motion.div
-                        initial={{ scale: 0.8 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ShoppingBag className="h-12 w-12 text-gray-300" />
-                      </motion.div>
-                      <p className="text-gray-500 text-sm font-medium">Your shopping bag is empty</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </a>
             </div>
+          </div>
 
-            <motion.div 
-              whileHover={{ scale: 1.1 }} 
-              whileTap={{ scale: 0.9 }}
-              className="cursor-pointer"
-            >
-              <Link
-                href="https://rsmacademy-sa.com/courses/search/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-gray-900"
-              >
-                <Search className="h-5 w-5" />
-              </Link>
-            </motion.div>
-
-            {/* Mobile menu button */}
-            <motion.div 
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="md:hidden"
-            >
+          {/* Right side icons */}
+          <div className="hidden md:flex items-center space-x-6">
+            <a href="https://rsmacademy-sa.com/login" target="_blank" className="flex items-center text-darkGray hover:text-primary text-lg font-medium">
+              <User className="h-5 w-5 mr-2" />
+              <span>Sign in</span>
+            </a>
+            <div className="relative group flex items-center">
               <button 
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-darkGray hover:text-primary flex items-center"
               >
-                {isMobileMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
+                <ShoppingBag className="h-5 w-5" />
               </button>
-            </motion.div>
+              <div 
+                className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-6 px-6 z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+                style={{ transform: "translateY(20px)", top: '100%', paddingTop: '10px' }}
+              >
+                <p className="text-darkGray text-base">Your shopping bag is empty</p>
+              </div>
+            </div>
+            <a href="https://rsmacademy-sa.com/courses/search/view" target="_blank" className="flex items-center">
+              <button className="text-darkGray hover:text-primary flex items-center">
+                <Search className="h-5 w-5" />
+              </button>
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-navy"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            ref={mobileMenuRef}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-b border-gray-200"
-          >
-            <div className="px-4 py-3 space-y-3">
-              {/* Mobile About Us */}
-              <div className="space-y-2">
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
+            <div className="flex flex-col space-y-4 px-4">
+              <div>
                 <button
-                  onClick={() => setIsAboutOpen(!isAboutOpen)}
-                  className="flex items-center justify-between w-full text-gray-700 hover:text-gray-900"
+                  className="flex items-center text-darkGray hover:text-primary focus:outline-none"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleAboutDropdown();
+                  }}
                 >
-                  <span>About Us</span>
-                  <motion.div
-                    animate={{ rotate: isAboutOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="h-4 w-4" />
-                  </motion.div>
+                  About Us
+                  <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <AnimatePresence>
-                  {isAboutOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-4 space-y-2"
+                {isAboutDropdownOpen && (
+                  <div className="pl-4 mt-2 space-y-2" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href="https://rsmacademy-sa.com/foreword"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
                     >
-                      <Link href="https://rsmacademy-sa.com/foreword" className="block text-sm text-gray-600 hover:text-gray-900">Presentation</Link>
-                      <Link href="https://rsmacademy-sa.com/vision" className="block text-sm text-gray-600 hover:text-gray-900">Vision</Link>
-                      <Link href="https://rsmacademy-sa.com/mission" className="block text-sm text-gray-600 hover:text-gray-900">Message</Link>
-                      <Link href="https://rsmacademy-sa.com/objectives" className="block text-sm text-gray-600 hover:text-gray-900">Objectives</Link>
-                      <Link href="https://rsmacademy-sa.com/core_values" className="block text-sm text-gray-600 hover:text-gray-900">Our Values</Link>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      Foreword
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/vision"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
+                    >
+                      Vision
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/mission"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
+                    >
+                      Mission
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/objectives"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
+                    >
+                      Objectives
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/core_values"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
+                    >
+                      Core Values
+                    </a>
+                  </div>
+                )}
               </div>
-
-              {/* Mobile Enterprise Training */}
-              <div className="space-y-2">
+              <div>
                 <button
-                  onClick={() => setIsEnterpriseOpen(!isEnterpriseOpen)}
-                  className="flex items-center justify-between w-full text-gray-700 hover:text-gray-900"
+                  className="flex items-center text-darkGray hover:text-primary focus:outline-none"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleCoursesDropdown();
+                  }}
                 >
-                  <span>Institutional Training</span>
-                  <motion.div
-                    animate={{ rotate: isEnterpriseOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="h-4 w-4" />
-                  </motion.div>
+                  Courses
+                  <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <AnimatePresence>
-                  {isEnterpriseOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-4 space-y-2"
+                {isCoursesDropdownOpen && (
+                  <div className="pl-4 mt-2 space-y-2" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href="https://rsmacademy-sa.com/courses/online"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
                     >
-                      <Link href="https://rsm-academy-landing.vercel.app/" className="block text-sm text-gray-600 hover:text-gray-900">Corporate Training</Link>
-                      <Link href="https://rsm-sustainability-landing.vercel.app/" className="block text-sm text-gray-600 hover:text-gray-900">Sustainability Toolkit Training</Link>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      Live Courses
+                    </a>
+                    <a
+                      href="https://rsmacademy-sa.com/courses/recorded"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
+                    >
+                      Recorded Courses
+                    </a>
+                  </div>
+                )}
               </div>
-
-              {/* Other mobile menu items */}
-              <Link href="https://rsmacademy-sa.com/courses" className="block text-gray-700 hover:text-gray-900">Courses</Link>
-              <Link href="https://rsmacademy-sa.com/courses/recorded" className="block text-gray-700 hover:text-gray-900">Recorded Courses</Link>
-              <Link href="https://rsmacademy-sa.com/courses/online" className="block text-gray-700 hover:text-gray-900">Live Courses</Link>
-              <Link href="https://rsmacademy-sa.com/contact_us" className="block text-gray-700 hover:text-gray-900">Contact Us</Link>
-              
-              {/* Mobile Sign In */}
-              <Link 
-                href="https://rsmacademy-sa.com/login" 
-                className="flex items-center text-gray-700 hover:text-gray-900"
+              <div>
+                <button
+                  className="flex items-center text-darkGray hover:text-primary focus:outline-none"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleCorporateTrainingDropdown();
+                    window.open("https://rsmacademy-sa.com/corporate-training", "_blank");
+                  }}
+                >
+                  Corporate Training
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {isCorporateTrainingDropdownOpen && (
+                  <div className="pl-4 mt-2 space-y-2" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href="https://gri-training.rsmacademy-sa.co"
+                      target="_blank"
+                      className="block text-darkGray hover:text-primary"
+                    >
+                      GRI™ Training
+                    </a>
+                  </div>
+                )}
+              </div>
+              <a
+                href="https://rsm-training-calendar.vercel.app/"
+                target="_blank"
+                className="text-darkGray hover:text-primary"
               >
-                <User className="mr-2 h-5 w-5" />
-                <span>Sign in</span>
-              </Link>
+                Training Calendar
+              </a>
+              <a
+                href="https://rsmacademy-sa.com/contact_us"
+                target="_blank"
+                className="text-darkGray hover:text-primary"
+              >
+                Contact Us
+              </a>
+              <div className="border-t border-gray-200 pt-4 mt-2 flex flex-col space-y-4">
+                <a
+                  href="https://rsmacademy-sa.com/login"
+                  target="_blank"
+                  className="flex items-center text-darkGray hover:text-primary"
+                >
+                  <User className="h-5 w-5 mr-2" />
+                  <span>Sign in</span>
+                </a>
+                <a
+                  href="https://rsmacademy-sa.com/courses/search/view"
+                  target="_blank"
+                  className="flex items-center text-darkGray hover:text-primary"
+                >
+                  <Search className="h-5 w-5 mr-2" />
+                  <span>Search</span>
+                </a>
+              </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </motion.header>
-  )
-}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

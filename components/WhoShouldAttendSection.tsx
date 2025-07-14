@@ -21,7 +21,7 @@ const attendees = [
   },
   {
     title: "Corporate Communication Teams",
-    desc: "Learn effective strategies for communicating sustainability initiatives.",
+    desc: "Learn effective strategies for communicating sustainability initiatives and engaging with various stakeholders..",
     icon: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(6).png" // logo link placeholder
   }
 ];

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ProgramDetailsSection() {
   return (
-    <section className="bg-gradient-to-b from-[#00163A] to-[#002a66] py-20">
+    <section className="bg-[#0A173C] py-20">
       <div className="container mx-auto px-8 lg:px-16 flex flex-col lg:flex-row gap-20 items-center justify-between">
         {/* Left Side */}
         <div className="flex-1 text-white max-w-xl">
@@ -22,8 +22,8 @@ export default function ProgramDetailsSection() {
                 <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group.png" alt="Vision 2030" width={40} height={40} />
               </div>
               <div>
-                <div className="font-semibold mb-1">Aligned with Saudi Vision 2030</div>
-                <div className="text-[#cfd8e3] text-sm leading-relaxed">Our program is specifically designed to support Saudi Arabia's sustainability goals.</div>
+                <div className="font-semibold mb-1">Global ESG Program with Regional Relevance</div>
+                <div className="text-[#cfd8e3] text-sm leading-relaxed">Aligned with international standards and relevant to initiatives like Saudi Arabia’s Vision 2030.</div>
               </div>
             </div>
             {/* Feature 2 */}
@@ -42,7 +42,7 @@ export default function ProgramDetailsSection() {
                 <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(2).png" alt="Case Studies" width={40} height={40} />
               </div>
               <div>
-                <div className="font-semibold mb-1">Practical Case Studies</div>
+                <div className="font-semibold mb-1">Real Case Studies</div>
                 <div className="text-[#cfd8e3] text-sm leading-relaxed">Learn from real–world examples from KSA and global markets.</div>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function ProgramDetailsSection() {
               </div>
             </div>
             <button 
-              onClick={() => window.open('https://rsmacademy.vercel.app/', '_blank')}
+              onClick={() => window.open('https://rsmacademy-sa.com/login', '_blank')}
               className="w-full bg-[#16A34A] hover:bg-[#1fa85a] text-white font-semibold py-3.5 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
             >
               Register for the program
