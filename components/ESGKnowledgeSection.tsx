@@ -102,7 +102,7 @@ export default function ESGKnowledgeSection() {
               Book a call for a training programme tailored precisely to your team’s needs.</div> 
             </div>
             <a
-              href="mailto:ladhikari@rsmsaudi.com"
+              href="https://deu9t.share.hsforms.com/2XauVAU1EQX6OrmHo9xmllA"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#009CDE] hover:bg-[#007bb3] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"
