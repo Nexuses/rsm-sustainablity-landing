@@ -63,7 +63,7 @@ export default function ProgramDetailsSection() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-[#00163A]">Duration</div>
-                  <div className="text-sm text-[#717171]">4 Days (16 Accredited Hours)</div>
+                  <div className="text-sm text-[#717171]">3 Days (9 Accredited Hours)</div>
                 </div>
               </div>
               {/* Delivery */}
