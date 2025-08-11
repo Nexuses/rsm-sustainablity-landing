@@ -48,6 +48,7 @@ export default function ProgramDetailsSection() {
             </div>
           </div>
         </div>
+        
         {/* Right Side */}
         <div className="flex-1 flex justify-center">
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full max-w-lg border-2 border-[#009BDE] transform hover:scale-[1.02] transition-transform duration-300">
