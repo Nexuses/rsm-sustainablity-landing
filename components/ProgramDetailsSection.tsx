@@ -22,8 +22,8 @@ export default function ProgramDetailsSection() {
                 <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group.png" alt="Vision 2030" width={40} height={40} />
               </div>
               <div>
-                <div className="font-semibold mb-1">Global ESG Program with Regional Relevance</div>
-                <div className="text-[#cfd8e3] text-sm leading-relaxed">Aligned with international standards and relevant to initiatives like Saudi Arabia’s Vision 2030.</div>
+                <div className="font-semibold mb-1">International ESG Program with Regional Relevance</div>
+                <div className="text-[#cfd8e3] text-sm leading-relaxed">A Joint ESG Program between RSM Saudi Arabia and Kuwait Aligned with international standards and relevant to initiatives such as Saudi Arabia's Vision 2030.</div>
               </div>
             </div>
             {/* Feature 2 */}
@@ -32,8 +32,8 @@ export default function ProgramDetailsSection() {
                 <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(1).png" alt="Certified" width={40} height={40} />
               </div>
               <div>
-                <div className="font-semibold mb-1">Globally Certified Program</div>
-                <div className="text-[#cfd8e3] text-sm leading-relaxed">Accredited by leading industry bodies including TVTC, GRI, and PRC.</div>
+                <div className="font-semibold mb-1">International Certified Program</div>
+                <div className="text-[#cfd8e3] text-sm leading-relaxed">Accredited by leading industry bodies including TVTC, and RSM.</div>
               </div>
             </div>
             {/* Feature 3 */}

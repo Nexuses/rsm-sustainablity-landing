@@ -5,8 +5,8 @@ import GoogleAnalyticsWrapper from './components/GoogleAnalyticsWrapper'
 
 export const metadata: Metadata = {
   title: 'RSM Sustainability Landing',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  description: 'Upskill Your Entire Organization With Our Comprehensive Program',
+  generator: 'Nexuses',
   icons: {
     icon: 'https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/rsm%20logo.png',
   },
