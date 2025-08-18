@@ -141,8 +141,12 @@ export default function ESGCourseCatalogueSection() {
                 </div>
 
                 {/* Register Button */}
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
-                  Register Now
+                <button
+                  disabled
+                  aria-disabled="true"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 opacity-50 cursor-not-allowed"
+                >
+                  Registrations opening soon
                 </button>
               </div>
             </div>
