@@ -1,13 +1,15 @@
 "use client"
+
 import React, { useState, useEffect } from "react";
 import { Menu, X, Search, User, ChevronDown, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
-  const [isCorporateTrainingDropdownOpen, setIsCorporateTrainingDropdownOpen] = useState(false);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +31,6 @@ const Navbar = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
     if (!isAboutDropdownOpen) {
       setIsCoursesDropdownOpen(false);
-      setIsCorporateTrainingDropdownOpen(false);
     }
   };
 
@@ -38,35 +39,26 @@ const Navbar = () => {
     setIsCoursesDropdownOpen(!isCoursesDropdownOpen);
     if (!isCoursesDropdownOpen) {
       setIsAboutDropdownOpen(false);
-      setIsCorporateTrainingDropdownOpen(false);
     }
   };
 
-  // Only for mobile
-  const toggleCorporateTrainingDropdown = () => {
-    setIsCorporateTrainingDropdownOpen(!isCorporateTrainingDropdownOpen);
-    if (!isCorporateTrainingDropdownOpen) {
-      setIsAboutDropdownOpen(false);
-      setIsCoursesDropdownOpen(false);
-    }
-  };
+  
 
   // Close mobile dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       setIsAboutDropdownOpen(false);
       setIsCoursesDropdownOpen(false);
-      setIsCorporateTrainingDropdownOpen(false);
     };
 
-    if (isAboutDropdownOpen || isCoursesDropdownOpen || isCorporateTrainingDropdownOpen) {
+    if (isAboutDropdownOpen || isCoursesDropdownOpen) {
       document.addEventListener("click", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [isAboutDropdownOpen, isCoursesDropdownOpen, isCorporateTrainingDropdownOpen]);
+  }, [isAboutDropdownOpen, isCoursesDropdownOpen]);
 
 
 
@@ -76,17 +68,21 @@ const Navbar = () => {
         isScrolled ? "bg-white shadow-md" : "bg-white"
       } py-4`}
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 ">
         <div className="flex justify-between items-center">
           {/* Left side with logo and navigation */}
           <div className="flex items-center gap-16">
             {/* Logo */}
             <div className="flex items-center">
               <a href="https://rsmacademy-sa.com/" target="_blank">
-                <img
+                <Image
                   src="https://res.cloudinary.com/rsmglobal/image/fetch/t_default/f_auto/q_auto/https://www.rsm.global/profiles/rsm_global_platform/themes/rsm_global_platform_2022/images/logo@2x.png"
                   alt="RSM Logo"
                   className="h-16"
+                  width={100}
+                  height={100}
+                  style={{ width: 'auto', objectFit: 'contain' }}
+                  priority={true}
                 />
               </a>
             </div>
@@ -172,35 +168,26 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative group">
-                <button
-                  className="flex items-center text-darkGray hover:text-primary focus:outline-none peer text-lg font-medium"
-                  onClick={() => window.open("https://rsmacademy-sa.com/corporate-training", "_blank")}
-                >
-                  Corporate Training
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                <div
-                  className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
-                  style={{ transform: "translateY(20px)", top: "100%", paddingTop: '10px'}}
-                >
-                  <div className="py-6 px-6 space-y-6">
-                    <a
-                      href="https://gri-training.rsmacademy-sa.co"
-                      target="_blank"
-                      className="block text-lg font-medium text-darkGray hover:text-primary"
-                    >
-                      GRI™ Training
-                    </a>
-                  </div>
-                </div>
-              </div>
               <a
-                href="https://rsm-training-calendar.vercel.app/"
+                href="https://rsmacademy-sa.com/corporate-training"
+                target="_blank"
+                className="text-darkGray hover:text-primary text-lg font-medium"
+              >
+                Corporate Training
+              </a>
+              <a
+                href="https://training-calendar.rsmacademy-sa.co/"
                 // target="_blank"
                 className="text-darkGray hover:text-primary text-lg font-medium"
               >
                 Training Calendar
+              </a>
+              <a
+                href="https://blog.rsmacademy-sa.com/"
+                target="_blank"
+                className="text-darkGray hover:text-primary text-lg font-medium"
+              >
+                Blog
               </a>
               <a
                 href="https://rsmacademy-sa.com/contact_us"
@@ -338,36 +325,26 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <div>
-                <button
-                  className="flex items-center text-darkGray hover:text-primary focus:outline-none"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleCorporateTrainingDropdown();
-                    window.open("https://rsmacademy-sa.com/corporate-training", "_blank");
-                  }}
-                >
-                  Corporate Training
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                {isCorporateTrainingDropdownOpen && (
-                  <div className="pl-4 mt-2 space-y-2" onClick={(e) => e.stopPropagation()}>
-                    <a
-                      href="https://gri-training.rsmacademy-sa.co"
-                      target="_blank"
-                      className="block text-darkGray hover:text-primary"
-                    >
-                      GRI™ Training
-                    </a>
-                  </div>
-                )}
-              </div>
+              <a
+                href="https://rsmacademy-sa.com/corporate-training"
+                target="_blank"
+                className="text-darkGray hover:text-primary"
+              >
+                Corporate Training
+              </a>
               <a
                 href="https://rsm-training-calendar.vercel.app/"
                 target="_blank"
                 className="text-darkGray hover:text-primary"
               >
                 Training Calendar
+              </a>
+              <a
+                href="https://blog.rsmacademy-sa.com/"
+                target="_blank"
+                className="text-darkGray hover:text-primary"
+              >
+                Blog
               </a>
               <a
                 href="https://rsmacademy-sa.com/contact_us"

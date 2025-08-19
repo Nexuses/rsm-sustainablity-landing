@@ -56,7 +56,7 @@ export default function ESGKnowledgeSection() {
               <span className="font-semibold text-lg sm:text-xl text-gray-900">Upcoming Session</span>
             </div>
             <div className="mb-3 sm:mb-4">
-              <div className="text-gray-700 font-medium mb-1 text-base sm:text-lg">September 29th-30th, 2025</div>
+              <div className="text-gray-700 font-medium mb-1 text-base sm:text-lg">29th - 30th September 2025</div>
               <div className="text-gray-500 text-sm sm:text-base">Limited seats available. Register early to secure your spot.</div>
             </div>
             <a

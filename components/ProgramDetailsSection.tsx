@@ -64,7 +64,7 @@ export default function ProgramDetailsSection() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-[#00163A]">Duration</div>
-                  <div className="text-sm text-[#717171]">3 Days (9 Accredited Hours)</div>
+                  <div className="text-sm text-[#717171]">2 Days (10 Hours)</div>
                 </div>
               </div>
               {/* Delivery */}
@@ -73,8 +73,18 @@ export default function ProgramDetailsSection() {
                   <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/div%20(1).png" alt="Online Mode" width={40} height={40} />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-[#00163A]">Delivery</div>
-                  <div className="text-sm text-[#717171]">Online Mode</div>
+                  <div className="text-sm font-semibold text-[#00163A]">Mode of Delivery</div>
+                  <div className="text-sm text-[#717171]">Online</div>
+                </div>
+              </div>
+              {/* Dates */}
+              <div className="flex items-center gap-5 group">
+                <div className="bg-[#E6F7FD] rounded-full transform group-hover:scale-110 transition-transform duration-300">
+                  <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/div.png" alt="Dates" width={40} height={40} />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-[#00163A]">Dates</div>
+                  <div className="text-sm text-[#717171]">29th - 30th September 2025</div>
                 </div>
               </div>
               {/* Certification */}
