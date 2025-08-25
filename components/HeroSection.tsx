@@ -58,7 +58,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a 
-                href="https://drive.google.com/file/d/1nOKmZckjEdZBbfx_7itcb9M8ECWBdD7N/view"
+                href="https://drive.google.com/file/d/1GOx0dp1Ujwn_O0HgeZWRxF0RG8HtZHdG/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-sky-600 hover:bg-sky-700 text-white px-8 py-3.5 rounded-lg min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
