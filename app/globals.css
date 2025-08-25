@@ -6,6 +6,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Basic RTL mirroring when html[dir="rtl"] is set by LanguageProvider */
+html[dir="rtl"] body {
+  direction: rtl;
+}
+html[dir="rtl"] .container, html[dir="rtl"] main, html[dir="rtl"] nav, html[dir="rtl"] section, html[dir="rtl"] footer {
+  text-align: right;
+}
+/* Flip common flex directions and margins paddings where needed */
+html[dir="rtl"] .ml-1 { margin-left: 0.25rem; margin-right: 0; }
+html[dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+html[dir="rtl"] .ml-2 { margin-left: 0.5rem; margin-right: 0; }
+html[dir="rtl"] .ml-8 { margin-left: 2rem; margin-right: 0; }
+html[dir="rtl"] .pl-4 { padding-left: 1rem; padding-right: 0; }
+html[dir="rtl"] .pr-4 { padding-right: 1rem; padding-left: 0; }
+/* Ensure dropdowns align to start/end for RTL */
+html[dir="rtl"] .left-0 { left: auto; right: 0; }
+html[dir="rtl"] .right-0 { right: auto; left: 0; }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
