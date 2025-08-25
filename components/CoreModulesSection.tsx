@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "./LanguageProvider";
 
 const modules = [
   {
@@ -24,14 +27,39 @@ const modules = [
 ];
 
 export default function CoreModulesSection() {
+  const { isArabic } = useLanguage();
+  const localizedModules = isArabic
+    ? [
+        {
+          title: "مقدمة في الاستدامة والأخلاقيات",
+          desc: "اكتسب أساسًا قويًا في ممارسات الاستدامة المصممة بما يلائم رؤية السعودية 2030.",
+          img: modules[0].img,
+        },
+        {
+          title: "مخاطر وفرص الحوكمة البيئية والاجتماعية والحوكمة (ESG)",
+          desc: "تعلّم تحديد المخاطر ودفع الابتكار واغتنام الفرص للنمو المستدام.",
+          img: modules[1].img,
+        },
+        {
+          title: "معايير وأطر ESG للأعمال المسؤولة",
+          desc: "تعرّف عمليًا على معايير ISO وإطاري GRI وTCFD ومعايير IFRS لتحقيق ميزة تنافسية.",
+          img: modules[2].img,
+        },
+        {
+          title: "إشراك أصحاب المصلحة من أجل الاستدامة",
+          desc: "ابنِ علاقات قوية وتعلّم فن اتخاذ القرار المستدام وإعداد التقارير.",
+          img: modules[3].img,
+        },
+      ]
+    : modules
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-black">
-          Core Modules to Build Your ESG Competence
+          {isArabic ? "وحدات أساسية لبناء كفاءتك في الحوكمة البيئية والاجتماعية والحوكمة" : "Core Modules to Build Your ESG Competence"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {modules.map((mod, idx) => (
+          {localizedModules.map((mod, idx) => (
             <div
               key={idx}
               className="bg-white shadow-xl overflow-hidden flex flex-col transition-transform hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-[#009BDE] duration-300 group"

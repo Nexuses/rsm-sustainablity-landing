@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "./LanguageProvider";
 
 export default function ESGKnowledgeSection() {
+  const { isArabic } = useLanguage();
   return (
     <motion.section 
       initial={{ opacity: 0, y: 20 }}
@@ -30,10 +32,10 @@ export default function ESGKnowledgeSection() {
           className="flex flex-col items-center justify-center text-center mb-6 md:mb-10"
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 px-2">
-            Gain ESG Knowledge That Drives Individual and Business Impact
+            {isArabic ? "اكتسب معرفة ESG تُحدث أثرًا فرديًا ومؤسسيًا" : "Gain ESG Knowledge That Drives Individual and Business Impact"}
           </h2>
           <p className="text-white/80 max-w-4xl mx-auto text-sm sm:text-base md:text-lg px-4">
-            Whether you're an individual professional looking to build ESG expertise, or an organization aiming to drive sustainable business practices — our training programs are designed to support your goals.
+            {isArabic ? "سواء كنت محترفًا فرديًا تسعى لبناء خبرة في ESG، أو مؤسسة تهدف إلى تعزيز ممارسات الاستدامة — صُمِّمت برامجنا لدعم أهدافك." : "Whether you're an individual professional looking to build ESG expertise, or an organization aiming to drive sustainable business practices — our training programs are designed to support your goals."}
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
@@ -53,11 +55,11 @@ export default function ESGKnowledgeSection() {
                   className="object-contain w-4 h-4 sm:w-6 sm:h-6"
                 />
               </span>
-              <span className="font-semibold text-lg sm:text-xl text-gray-900">Upcoming Session</span>
+              <span className="font-semibold text-lg sm:text-xl text-gray-900">{isArabic ? "الدورة القادمة" : "Upcoming Session"}</span>
             </div>
             <div className="mb-3 sm:mb-4">
-              <div className="text-gray-700 font-medium mb-1 text-base sm:text-lg">29th - 30th September 2025</div>
-              <div className="text-gray-500 text-sm sm:text-base">Limited seats available. Register early to secure your spot.</div>
+              <div className="text-gray-700 font-medium mb-1 text-base sm:text-lg">{isArabic ? "29 سبتمبر - 1 أكتوبر 2025" : "29th September - 1st October 2025"}</div>
+              <div className="text-gray-500 text-sm sm:text-base">{isArabic ? "المقاعد محدودة. سارع بالتسجيل لحجز مقعدك." : "Limited seats available. Register early to secure your spot."}</div>
             </div>
             <a
               href="https://drive.google.com/file/d/1yuaep8c1Uzs0hp7bK4Y6Z_BkMwv6R4i4/view?usp=drive_link"
@@ -66,7 +68,7 @@ export default function ESGKnowledgeSection() {
               className="group bg-[#27C26C] hover:bg-[#1fa85a] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Explore Program Details
+                {isArabic ? "استكشف تفاصيل البرنامج" : "Explore Program Details"}
                 <svg 
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
                   fill="none" 
@@ -95,11 +97,10 @@ export default function ESGKnowledgeSection() {
                   className="object-contain w-4 h-4 sm:w-6 sm:h-6"
                 />
               </span>
-              <span className="font-semibold text-lg sm:text-xl text-gray-900">Customized Training for Your Organisation</span>
+              <span className="font-semibold text-lg sm:text-xl text-gray-900">{isArabic ? "تدريب مخصص لمؤسستك" : "Customized Training for Your Organisation"}</span>
             </div>
             <div className="mb-3 sm:mb-4">
-              <div className="text-gray-700 text-sm sm:text-base mb-1">Need a training programme tailored to your team’s exact needs? 
-              Book a call for a training programme tailored precisely to your team’s needs.</div> 
+              <div className="text-gray-700 text-sm sm:text-base mb-1">{isArabic ? "هل تحتاج إلى برنامج تدريبي مصمم خصيصًا لاحتياجات فريقك؟ احجز مكالمة لبرنامج تدريبي مناسب تمامًا لاحتياجات فريقك." : "Need a training programme tailored to your team’s exact needs? Book a call for a training programme tailored precisely to your team’s needs."}</div> 
             </div>
             <a
               href="https://deu9t.share.hsforms.com/2XauVAU1EQX6OrmHo9xmllA"
@@ -108,7 +109,7 @@ export default function ESGKnowledgeSection() {
               className="group bg-[#009CDE] hover:bg-[#007bb3] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Book a Call
+                {isArabic ? "احجز مكالمة" : "Book a Call"}
                 <svg 
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
                   fill="none" 

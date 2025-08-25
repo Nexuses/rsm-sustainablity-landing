@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "./LanguageProvider";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="pt-32 pb-16 bg-gradient-to-r from-white to-green-50 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
@@ -22,7 +24,7 @@ export default function HeroSection() {
               className="text-[2.4rem] md:text-[2.8rem] leading-tight mb-0"
             >
               <span className="text-[#3F9C35] font-bold inline-block hover:text-[#2E7D32] transition-colors duration-300">
-                The Sustainability Toolkit:
+                {t("hero.titlePrefix")}
               </span>
             </motion.h1>
             <motion.div 
@@ -31,7 +33,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-[2.6rem] md:text-[3rem] leading-tight mb-1 text-[#5A5A5A]"
             >
-              Empowering Businesses for
+              {t("hero.titleLine1")}
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +41,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-[2.6rem] md:text-[3rem] leading-tight mb-6 text-[#5A5A5A]"
             >
-              Positive Change
+              {t("hero.titleLine2")}
             </motion.div>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -47,7 +49,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-gray-600 text-base md:text-lg mb-8"
             >
-              Empowering organizations to build expertise, drive change, and lead with impact. Designed for forward-thinking companies ready to turn sustainability into strategic advantage.
+              {t("hero.description")}
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -62,7 +64,7 @@ export default function HeroSection() {
                 className="group bg-sky-600 hover:bg-sky-700 text-white px-8 py-3.5 rounded-lg min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  Explore Program Details
+                  {t("hero.cta.details")}
                   <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
@@ -76,7 +78,7 @@ export default function HeroSection() {
                 className="group bg-blue-950 hover:bg-blue-900 text-white px-8 py-3.5 rounded-lg sm:ml-8 min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  Enroll Now
+                  {t("hero.cta.enroll")}
                   <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
