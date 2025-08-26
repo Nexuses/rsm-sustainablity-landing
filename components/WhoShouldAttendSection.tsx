@@ -95,12 +95,12 @@ export default function WhoShouldAttendSection() {
                 {/* Main Border */}
                 <div className="absolute inset-0 border-2 border-[#009CDE] rounded-xl transition-all duration-300 group-hover:border-[#009CDE]/80" />
                 
-                {/* Corner Accents */}
-                <div className="absolute top-0 left-0 w-12 h-12">
-                  <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#009CDE] rounded-tl-xl transition-all duration-300 group-hover:border-[#009CDE]/80" />
+                {/* Corner Accents (pinned to physical corners; do not mirror in RTL) */}
+                <div className="absolute w-12 h-12" style={{ top: 0, left: 0 }}>
+                  <div className="absolute w-6 h-6 border-t-2 border-l-2 border-[#009CDE] rounded-tl-xl transition-all duration-300 group-hover:border-[#009CDE]/80" style={{ top: 0, left: 0 }} />
                 </div>
-                <div className="absolute bottom-0 right-0 w-12 h-12">
-                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#009CDE] rounded-br-xl transition-all duration-300 group-hover:border-[#009CDE]/80" />
+                <div className="absolute w-12 h-12" style={{ bottom: 0, right: 0 }}>
+                  <div className="absolute w-6 h-6 border-b-2 border-r-2 border-[#009CDE] rounded-br-xl transition-all duration-300 group-hover:border-[#009CDE]/80" style={{ bottom: 0, right: 0 }} />
                 </div>
 
                 {/* Hover Effect */}
