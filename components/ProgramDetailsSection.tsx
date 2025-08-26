@@ -26,8 +26,8 @@ export default function ProgramDetailsSection() {
           <div className="space-y-8">
             {/* Feature 1 */}
             <div className="flex items-start gap-5 group hover:translate-x-2 transition-transform duration-300">
-              <div className="min-w-[40px] bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
-                <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group.png" alt="Vision 2030" width={40} height={40} />
+              <div className="flex-shrink-0 w-14 h-14 bg-white/10 rounded-xl grid place-items-center group-hover:bg-white/20 transition-colors duration-300">
+                <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group.png" alt="Vision 2030" width={36} height={36} style={{ objectFit: "contain" }} />
               </div>
               <div>
                 <div className="font-semibold mb-1">{isArabic ? "برنامج ESG دولي بملاءمة إقليمية" : "International ESG Program with Regional Relevance"}</div>
@@ -36,8 +36,8 @@ export default function ProgramDetailsSection() {
             </div>
             {/* Feature 2 */}
             <div className="flex items-start gap-5 group hover:translate-x-2 transition-transform duration-300">
-              <div className="min-w-[40px] bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
-                <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(1).png" alt="Certified" width={40} height={40} />
+              <div className="flex-shrink-0 w-14 h-14 bg-white/10 rounded-xl grid place-items-center group-hover:bg-white/20 transition-colors duration-300">
+                <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(1).png" alt="Certified" width={36} height={36} style={{ objectFit: "contain" }} />
               </div>
               <div>
                 <div className="font-semibold mb-1">{isArabic ? "برنامج معتمد دوليًا" : "International Certified Program"}</div>
@@ -46,8 +46,8 @@ export default function ProgramDetailsSection() {
             </div>
             {/* Feature 3 */}
             <div className="flex items-start gap-5 group hover:translate-x-2 transition-transform duration-300">
-              <div className="min-w-[40px] bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
-                <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(2).png" alt="Case Studies" width={40} height={40} />
+              <div className="flex-shrink-0 w-14 h-14 bg-white/10 rounded-xl grid place-items-center group-hover:bg-white/20 transition-colors duration-300">
+                <Image src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/Mask%20group%20(2).png" alt="Case Studies" width={36} height={36} style={{ objectFit: "contain" }} />
               </div>
               <div>
                 <div className="font-semibold mb-1">{isArabic ? "دراسات حالة واقعية" : "Real Case Studies"}</div>
