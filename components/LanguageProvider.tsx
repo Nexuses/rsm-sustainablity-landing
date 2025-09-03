@@ -23,6 +23,7 @@ const translations: TranslationDict = {
   "navbar.corporateTraining": { en: "Corporate Training", ar: "تدريب المؤسسات" },
   "navbar.trainingCalendar": { en: "Training Calendar", ar: "التقويم" },
   "navbar.blog": { en: "Blog", ar: "المدونة" },
+  "navbar.gallery": { en: "Gallery", ar: "المعرض" },
   "navbar.contactUs": { en: "Contact Us", ar: "اتصل بنا" },
   "navbar.signIn": { en: "Sign in", ar: "تسجيل الدخول" },
   "navbar.search": { en: "Search", ar: "بحث" },
