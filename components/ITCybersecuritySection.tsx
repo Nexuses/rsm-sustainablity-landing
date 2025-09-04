@@ -6,7 +6,7 @@ const courses = [
     title: "The Sustainability Toolkit Empowering Businesses for Positive Change Slot 1",
     image: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/123(1)_7a2908df-d06f-4b71-9bc1-73f60919dad1.jpg",
     date: "29 Sep - 1 Oct",
-    time: "5:00 PM - 8:00 PM",
+    time: "6:00 PM - 9:00 PM",
     location: "Online",
     duration: "3 days • 9h",
     status: "Upcoming",
@@ -22,7 +22,7 @@ const courses = [
     title: "The Sustainability Toolkit Empowering Businesses for Positive Change Slot 2",
     image: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/123(1)_7a2908df-d06f-4b71-9bc1-73f60919dad1.jpg",
     date: "28-30 Oct",
-    time: "5:00 PM - 08:00 PM",
+    time: "6:00 PM - 09:00 PM",
     location: "Online",
     duration: "3 days • 9h",
     status: "Upcoming",
@@ -38,7 +38,7 @@ const courses = [
     title: "The Sustainability Toolkit Empowering Businesses for Positive Change Slot 3",
     image: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/123(1)_7a2908df-d06f-4b71-9bc1-73f60919dad1.jpg",
     date: "24-26 Nov",
-    time: "5:00 PM - 08:00 PM",
+    time: "6:00 PM - 09:00 PM",
     location: "Online",
     duration: "3 days • 9h",
     status: "Upcoming",
@@ -141,9 +141,9 @@ export default function ESGCourseCatalogueSection() {
                 </div>
 
                 {/* Register Button */}
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                <a href="https://rsmacademy-sa.com/courses/36" target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 text-center block">
                   Register Now
-                </button>
+                </a>
               </div>
             </div>
           ))}

@@ -62,7 +62,7 @@ export default function ESGKnowledgeSection() {
               <div className="text-gray-500 text-sm sm:text-base">{isArabic ? "المقاعد محدودة. سارع بالتسجيل لحجز مقعدك." : "Limited seats available. Register early to secure your spot."}</div>
             </div>
             <a
-              href="https://drive.google.com/file/d/1yuaep8c1Uzs0hp7bK4Y6Z_BkMwv6R4i4/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Rj83Jmgv03qxfdukFnquGzkq3Sj_S5vJ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#27C26C] hover:bg-[#1fa85a] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"
@@ -103,7 +103,7 @@ export default function ESGKnowledgeSection() {
               <div className="text-gray-700 text-sm sm:text-base mb-1">{isArabic ? "هل تحتاج إلى برنامج تدريبي مصمم خصيصًا لاحتياجات فريقك؟ احجز مكالمة لبرنامج تدريبي مناسب تمامًا لاحتياجات فريقك." : "Need a training programme tailored to your team’s exact needs? Book a call for a training programme tailored precisely to your team’s needs."}</div> 
             </div>
             <a
-              href="https://deu9t.share.hsforms.com/2XauVAU1EQX6OrmHo9xmllA"
+              href="https://rsmacademy-sa.com/contact_us"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#009CDE] hover:bg-[#007bb3] text-white font-semibold px-6 py-2 rounded transition-all duration-300 text-sm inline-block text-center relative overflow-hidden"

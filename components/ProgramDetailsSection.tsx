@@ -107,7 +107,7 @@ export default function ProgramDetailsSection() {
               </div>
             </div>
             <button 
-              onClick={() => window.open('https://deu9t.share.hsforms.com/2XauVAU1EQX6OrmHo9xmllA', '_blank')}
+              onClick={() => window.open('https://rsmacademy-sa.com/courses/36', '_blank')}
               className="w-full bg-[#16A34A] hover:bg-[#1fa85a] text-white font-semibold py-3.5 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
             >
               {isArabic ? "سجّل في البرنامج" : "Register for the program"}
