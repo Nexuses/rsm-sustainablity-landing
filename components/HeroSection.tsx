@@ -58,7 +58,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a 
-                href="https://drive.google.com/file/d/1GOx0dp1Ujwn_O0HgeZWRxF0RG8HtZHdG/view"
+                href="https://drive.google.com/file/d/1Rj83Jmgv03qxfdukFnquGzkq3Sj_S5vJ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-sky-600 hover:bg-sky-700 text-white px-8 py-3.5 rounded-lg min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
@@ -72,7 +72,7 @@ export default function HeroSection() {
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
               <a 
-                href="https://deu9t.share.hsforms.com/2XauVAU1EQX6OrmHo9xmllA"
+                href="https://rsmacademy-sa.com/courses/36"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-blue-950 hover:bg-blue-900 text-white px-8 py-3.5 rounded-lg sm:ml-8 min-w-[180px] font-medium transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 inline-block text-center relative overflow-hidden"
