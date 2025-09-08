@@ -155,13 +155,24 @@ export default function ESGCourseCatalogueSection() {
                 </div>
 
                 {/* Register Button */}
-                <button
-                  disabled
-                  aria-disabled="true"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 opacity-50 cursor-not-allowed"
-                >
-                  {isArabic ? "التسجيل سيفتح قريبًا" : "Registrations opening soon"}
-                </button>
+                {
+                  idx === 0 ? (
+                    <button
+                      onClick={() => window.open('https://rsmacademy-sa.com/courses/36', '_blank')}
+                      className="w-full bg-[#009cde] hover:bg-[#007bb3] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200"
+                    >
+                      {isArabic ? "التسجيل" : "Register"}
+                    </button>
+                  ) : (
+                    <button
+                      disabled
+                      aria-disabled="true"
+                      className="w-full bg-[#009cde] hover:bg-[#007bb3] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 opacity-50 cursor-not-allowed"
+                    >
+                      {isArabic ? "التسجيل سيفتح قريبًا" : "Registrations opening soon"}
+                    </button>
+                  )
+                }
               </div>
             </div>
           ))}
