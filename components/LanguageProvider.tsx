@@ -18,6 +18,7 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
 
 const translations: TranslationDict = {
   // Navbar
+  "navbar.home": { en: "Home", ar: "الرئيسية" },
   "navbar.aboutUs": { en: "About Us", ar: "عنا" },
   "navbar.courses": { en: "Courses", ar: "البرامج التدريبية" },
   "navbar.corporateTraining": { en: "Corporate Training", ar: "تدريب المؤسسات" },
