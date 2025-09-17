@@ -94,13 +94,13 @@ const Navbar = () => {
               <a
                 href="https://rsmacademy-sa.com/"
                 target="_blank"
-                className="text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                className="text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
               >
                 {t("navbar.home")}
               </a>
               <div className="relative group">
                 <button
-                  className="flex items-center text-darkGray hover:text-primary focus:outline-none peer text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                  className="flex items-center text-gray-600 hover:text-primary focus:outline-none peer text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
                 >
                   {t("navbar.aboutUs")}
                   <ChevronDown className="ml-1 h-4 w-4" />
@@ -113,35 +113,35 @@ const Navbar = () => {
                     <a
                       href="https://rsmacademy-sa.com/foreword"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium border-b border-gray-200 pb-3"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal border-b border-gray-200 pb-3"
                     >
                       {t("navbar.foreword")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/vision"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium border-b border-gray-200 pb-3"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal border-b border-gray-200 pb-3"
                     >
                       {t("navbar.vision")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/mission"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium border-b border-gray-200 pb-3"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal border-b border-gray-200 pb-3"
                     >
                       {t("navbar.mission")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/objectives"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium border-b border-gray-200 pb-3"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal border-b border-gray-200 pb-3"
                     >
                       {t("navbar.objectives")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/core_values"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal"
                     >
                       {t("navbar.coreValues")}
                     </a>
@@ -150,7 +150,7 @@ const Navbar = () => {
               </div>
               <div className="relative group">
                 <button
-                  className="flex items-center text-darkGray hover:text-primary focus:outline-none peer text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                  className="flex items-center text-gray-600 hover:text-primary focus:outline-none peer text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
                 >
                   {t("navbar.courses")}
                   <ChevronDown className="ml-1 h-4 w-4" />
@@ -163,14 +163,14 @@ const Navbar = () => {
                     <a
                       href="https://rsmacademy-sa.com/courses/online"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium border-b border-gray-200 pb-3"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal border-b border-gray-200 pb-3"
                     >
                       {t("navbar.liveCourses")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/courses/recorded"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium"
+                      className="block text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal"
                     >
                       {t("navbar.recordedCourses")}
                     </a>
@@ -180,35 +180,35 @@ const Navbar = () => {
               <a
                 href="https://rsmacademy-sa.com/corporate-training"
                 target="_blank"
-                className="text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                className="text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
               >
                 {t("navbar.corporateTraining")}
               </a>
               <a
                 href="https://training-calendar.rsmacademy-sa.co/"
                 // target="_blank"
-                className="text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                className="text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
               >
                 {t("navbar.trainingCalendar")}
               </a>
               <a
                 href="https://blog.rsmacademy-sa.com/"
                 target="_blank"
-                className="text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                className="text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
               >
                 {t("navbar.blog")}
               </a>
               <a
                 href="https://rsmacademy-sa.com/gallery"
                 target="_blank"
-                className="text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                className="text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
               >
                 {t("navbar.gallery")}
               </a>
               <a
                 href="https://rsmacademy-sa.com/contact_us"
                 target="_blank"
-                className="text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap"
+                className="text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap"
               >
                 {t("navbar.contactUs")}
               </a>
@@ -217,13 +217,13 @@ const Navbar = () => {
 
           {/* Right side icons */}
           <div className={`hidden xl:flex items-center ${isArabic ? 'space-x-reverse space-x-6' : 'space-x-6'}`}>
-            <a href="https://rsmacademy-sa.com/login" target="_blank" className="flex items-center text-darkGray hover:text-primary text-base md:text-sm lg:text-base font-medium whitespace-nowrap">
+            <a href="https://rsmacademy-sa.com/login" target="_blank" className="flex items-center text-gray-600 hover:text-primary text-base md:text-sm lg:text-base font-normal whitespace-nowrap">
               <User className="h-5 w-5 mr-2" />
               <span>{t("navbar.signIn")}</span>
             </a>
             <div className="relative group flex items-center">
               <button 
-                className="text-darkGray hover:text-primary flex items-center"
+                className="text-gray-600 hover:text-primary flex items-center"
               >
                 <ShoppingBag className="h-5 w-5" />
               </button>
@@ -231,11 +231,11 @@ const Navbar = () => {
                 className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-6 px-6 z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
                 style={{ transform: "translateY(20px)", top: '100%', paddingTop: '10px' }}
               >
-                <p className="text-darkGray text-base">Your shopping bag is empty</p>
+                <p className="text-gray-600 text-base">Your shopping bag is empty</p>
               </div>
             </div>
             <a href="https://rsmacademy-sa.com/courses/search/view" target="_blank" className="flex items-center">
-              <button className="text-darkGray hover:text-primary flex items-center">
+              <button className="text-gray-600 hover:text-primary flex items-center">
                 <Search className="h-5 w-5" />
               </button>
             </a>
@@ -245,7 +245,7 @@ const Navbar = () => {
           <div className="xl:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-navy"
+              className="text-gray-600"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -263,13 +263,13 @@ const Navbar = () => {
               <a
                 href="https://rsmacademy-sa.com/"
                 target="_blank"
-                className="text-darkGray hover:text-primary"
+                className="text-gray-600 hover:text-primary"
               >
                 {t("navbar.home")}
               </a>
               <div>
                 <button
-                  className="flex items-center text-darkGray hover:text-primary focus:outline-none"
+                  className="flex items-center text-gray-600 hover:text-primary focus:outline-none"
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleAboutDropdown();
@@ -283,35 +283,35 @@ const Navbar = () => {
                     <a
                       href="https://rsmacademy-sa.com/foreword"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.foreword")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/vision"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.vision")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/mission"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.mission")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/objectives"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.objectives")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/core_values"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.coreValues")}
                     </a>
@@ -320,7 +320,7 @@ const Navbar = () => {
               </div>
               <div>
                 <button
-                  className="flex items-center text-darkGray hover:text-primary focus:outline-none"
+                  className="flex items-center text-gray-600 hover:text-primary focus:outline-none"
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleCoursesDropdown();
@@ -334,14 +334,14 @@ const Navbar = () => {
                     <a
                       href="https://rsmacademy-sa.com/courses/online"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.liveCourses")}
                     </a>
                     <a
                       href="https://rsmacademy-sa.com/courses/recorded"
                       target="_blank"
-                      className="block text-darkGray hover:text-primary"
+                      className="block text-gray-600 hover:text-primary"
                     >
                       {t("navbar.recordedCourses")}
                     </a>
@@ -351,35 +351,35 @@ const Navbar = () => {
               <a
                 href="https://rsmacademy-sa.com/corporate-training"
                 target="_blank"
-                className="text-darkGray hover:text-primary"
+                className="text-gray-600 hover:text-primary"
               >
                 {t("navbar.corporateTraining")}
               </a>
               <a
                 href="https://rsm-training-calendar.vercel.app/"
                 target="_blank"
-                className="text-darkGray hover:text-primary"
+                className="text-gray-600 hover:text-primary"
               >
                 {t("navbar.trainingCalendar")}
               </a>
               <a
                 href="https://blog.rsmacademy-sa.com/"
                 target="_blank"
-                className="text-darkGray hover:text-primary"
+                className="text-gray-600 hover:text-primary"
               >
                 {t("navbar.blog")}
               </a>
               <a
                 href="https://rsmacademy-sa.com/gallery"
                 target="_blank"
-                className="text-darkGray hover:text-primary"
+                className="text-gray-600 hover:text-primary"
               >
                 {t("navbar.gallery")}
               </a>
               <a
                 href="https://rsmacademy-sa.com/contact_us"
                 target="_blank"
-                className="text-darkGray hover:text-primary"
+                className="text-gray-600 hover:text-primary"
               >
                 {t("navbar.contactUs")}
               </a>
@@ -387,7 +387,7 @@ const Navbar = () => {
                 <a
                   href="https://rsmacademy-sa.com/login"
                   target="_blank"
-                  className="flex items-center text-darkGray hover:text-primary"
+                  className="flex items-center text-gray-600 hover:text-primary"
                 >
                   <User className="h-5 w-5 mr-2" />
                   <span>{t("navbar.signIn")}</span>
@@ -395,7 +395,7 @@ const Navbar = () => {
                 <a
                   href="https://rsmacademy-sa.com/courses/search/view"
                   target="_blank"
-                  className="flex items-center text-darkGray hover:text-primary"
+                  className="flex items-center text-gray-600 hover:text-primary"
                 >
                   <Search className="h-5 w-5 mr-2" />
                   <span>{t("navbar.search")}</span>
