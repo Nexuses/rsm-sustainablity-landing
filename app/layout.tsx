@@ -10,7 +10,22 @@ export const metadata: Metadata = {
   description: 'Upskill Your Entire Organization With Our Comprehensive Program',
   generator: 'Nexuses',
   icons: {
-    icon: 'https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Sustainibility%20Landing%20page/rsm%20logo.png',
+    icon: [
+      {
+        url: 'https://cdn-nexlink.s3.us-east-2.amazonaws.com/logo_76df713f-10c2-4778-9265-477ee0d1b41c.png',
+        rel: 'icon',
+        type: 'image/png',
+      },
+      {
+        url: 'https://cdn-nexlink.s3.us-east-2.amazonaws.com/logo_76df713f-10c2-4778-9265-477ee0d1b41c.png',
+        rel: 'shortcut icon',
+        type: 'image/png',
+      },
+    ],
+    apple: {
+      url: 'https://cdn-nexlink.s3.us-east-2.amazonaws.com/logo_76df713f-10c2-4778-9265-477ee0d1b41c.png',
+      sizes: '180x180',
+    },
   },
 }
 
